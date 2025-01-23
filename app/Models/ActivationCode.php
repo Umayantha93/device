@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ActivationCode extends Model
 {
-    protected $fillable = ['code', 'leasing_plan_id', 'assigned_to'];
+    protected $fillable = ['code', 'leasing_plan_id'];
 
     public function leasingPlan()
     {
@@ -15,6 +15,6 @@ class ActivationCode extends Model
 
     public function device()
     {
-        return $this->belongsTo(Device::class, 'assigned_to');
+        return $this->belongsTo(Device::class);
     }
 }
