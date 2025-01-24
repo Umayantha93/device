@@ -14,14 +14,21 @@ class LeasingResource extends JsonResource
         parent::__construct($resource);
         $this->computed = $computedData;
     }
+
     public function toArray(Request $request): array
     {
         return [
             'deviceId' => $this->device_id,
             'deviceType' => $this->device_type,
-            'deviceOwner' => $this->deviceOwner->billing_name ?? null,
-            'deviceOwnerDetails' => new OwnerResource($this->deviceOwner) ?? null,
-            'leasingPeriodsComputed' => $this->computed ?? null,
+            $this->mergeWhen($this->device_type === "leasing", [
+                'deviceOwner' => $this->deviceOwner?->billing_name,
+                'deviceOwnerDetails' => $this->deviceOwner 
+                ? new OwnerResource($this->deviceOwner) 
+                : null,
+            ]),
+            $this->mergeWhen($this->computed !== null, [
+                'leasingPeriodsComputed' => $this->computed,
+            ]),
             'leasingPeriods' => LeasingPeriodsResource::collection($this->leasingPeriods),
             'timestamp' => now()->toDateTimeString(),
         ];
