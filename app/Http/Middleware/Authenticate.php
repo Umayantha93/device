@@ -21,10 +21,10 @@ class Authenticate
         if (!$apiKey) {
             return response()->json(['message' => 'Authorization token not provided'], 401);
         }
+        
+        $device = Device::find($request->id);
 
-        $device = Device::where('device_api_key', $apiKey)->first();
-
-        if (!$device) {
+        if ($device->device_api_key !== $apiKey) {
             return response()->json(['message' => 'Unauthorized, invalid API key'], 401);
         }
         
