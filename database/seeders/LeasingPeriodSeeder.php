@@ -15,7 +15,7 @@ class LeasingPeriodSeeder extends Seeder
     {
         DB::table('leasing_periods')->insert([
             [
-                'device_id' => 3,
+                'device_id' => 1,
                 'leasing_plan_id' => 4,
                 'leasing_construction_id' => 51342268,
                 'leasing_construction_maximum_training' => 300,
@@ -26,7 +26,7 @@ class LeasingPeriodSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'device_id' => 3,
+                'device_id' => 1,
                 'leasing_plan_id' => 3,
                 'leasing_construction_id' => 42115269,
                 'leasing_construction_maximum_training' => null,
@@ -37,7 +37,7 @@ class LeasingPeriodSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'device_id' => 3,
+                'device_id' => 1,
                 'leasing_plan_id' => 3,
                 'leasing_construction_id' => 28524612,
                 'leasing_construction_maximum_training' => 50,
@@ -48,7 +48,7 @@ class LeasingPeriodSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'device_id' => 3,
+                'device_id' => 1,
                 'leasing_plan_id' => 1,
                 'leasing_construction_id' => 12345678,
                 'leasing_construction_maximum_training' => 50,
@@ -59,7 +59,7 @@ class LeasingPeriodSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'device_id' => 3,
+                'device_id' => 2,
                 'leasing_plan_id' => 4,
                 'leasing_construction_id' => 87654321,
                 'leasing_construction_maximum_training' => 200,
@@ -70,7 +70,7 @@ class LeasingPeriodSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'device_id' => 1,
+                'device_id' => 2,
                 'leasing_plan_id' => 1,
                 'leasing_construction_id' => 10293847,
                 'leasing_construction_maximum_training' => null,
@@ -81,7 +81,7 @@ class LeasingPeriodSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'device_id' => 1,
+                'device_id' => 2,
                 'leasing_plan_id' => 1,
                 'leasing_construction_id' => 56473829,
                 'leasing_construction_maximum_training' => null,
@@ -93,9 +93,9 @@ class LeasingPeriodSeeder extends Seeder
             ],
             [
                 'device_id' => 1,
-                'leasing_plan_id' => 1,
+                'leasing_plan_id' => 4,
                 'leasing_construction_id' => 29384756,
-                'leasing_construction_maximum_training' => null,
+                'leasing_construction_maximum_training' => 150,
                 'leasing_construction_maximum_date' => null,
                 'start_date' => '2021-08-01',
                 'next_check' => '2022-02-01 17:30:00',

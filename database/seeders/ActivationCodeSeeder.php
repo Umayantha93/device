@@ -14,8 +14,21 @@ class ActivationCodeSeeder extends Seeder
      */
     public function run(): void
     {
+        $devices = [];
+
+        // Add the first two devices with activation_code_id 1 and 2
+        $devices[] = [
+            'code' => $this->generateActivationCode(),
+            'leasing_plan_id' => 4,
+        ];
+
+        $devices[] = [
+            'code' => $this->generateActivationCode(),
+            'leasing_plan_id' => 3,
+        ];
+
        $activationCodes = [];
-       for ($i = 0; $i < 50; $i++) {
+       for ($i = 3; $i < 50; $i++) {
            $activationCodes[] = [
                'code' => $this->generateActivationCode(),
                'leasing_plan_id' => rand(1, 4),
